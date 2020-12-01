@@ -1,0 +1,14 @@
+.profile-container {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background: #a1a2a3;
+}
+
+.nav-container {
+    box-shadow: 5px 5px 10px #f1f2f3;
+}
+
+.nav-link-icon {
+    font-size: 24px;
+}

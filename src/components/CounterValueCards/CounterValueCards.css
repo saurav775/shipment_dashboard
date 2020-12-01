@@ -1,0 +1,20 @@
+.counter-container {
+    background: #d5deff;
+    color: #2e5bff;
+    width: 75px;
+    height: 75px;
+    border-radius: 8px;
+}
+
+.counter-container-active {
+    background: #2e5bff;
+    color: #fff;
+}
+
+.counter-text {
+    font-size: 13px;
+}
+
+.counter-number {
+    font-size: 28px;
+}

@@ -1,12 +1,13 @@
 import React, { useEffect, useState, Fragment } from 'react'
 import axios from 'axios'
-import { Navbar, CounterValueCards } from './components'
+import { Navbar, CounterValueCards, Shipments } from './components'
 import { Loader } from './UIComponents'
 import './App.css'
 
 const App = () => {
   const [ shipments, setShipments ] = useState([])
   const [loading, setLoading] = useState(true)
+  const [currentStatusCode, setCurrentStatusCode] = useState('DEL')
 
   useEffect(() => {
     axios.post('https://f0ztti2nsk.execute-api.ap-south-1.amazonaws.com/v1/consignment/fetch',
@@ -26,13 +27,24 @@ const App = () => {
     return counterData
   }
 
+  const getFilteredShipments = () => {
+    const filteredShipments = []
+    shipments.forEach(e => {
+      if(e.current_status_code === currentStatusCode) {
+        filteredShipments.push(e)
+      }
+    })
+    return filteredShipments
+  }
+
   return (
     <Fragment>
       <Navbar />
       {
         loading ? (<Loader />) : (
           <div className="container">
-            <CounterValueCards counterData={getCounterData()} />
+            <CounterValueCards counterData={getCounterData()} getCurrentStatusCode={(statusCode) => setCurrentStatusCode(statusCode)} currentStatusCode={currentStatusCode} />
+            <Shipments filteredData={getFilteredShipments()} />
           </div>
         )
       }

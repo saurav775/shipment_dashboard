@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Shipment from '../Shipment'
+import Timeline from '../Timeline'
 import './Shipments.css'
 
 const Shipments = (props) => {
     const { filteredData } = props
+    const [currentItem, setCurrentItem] = useState(filteredData[0])
+    const handleShipmentClick = (id) => {
+        setCurrentItem(filteredData.filter(e => e._id === id)[0])
+    }
     return (
         <div className="d-flex flex-space-between align-items-center">
             <div className="timeline-container">
-                Timeline-view
+                <Timeline item={currentItem.scan} />
             </div>
             <div className="shipments-container">
                 <div className="d-flex table-heading flex-space-between">
@@ -22,7 +27,7 @@ const Shipments = (props) => {
                 <div className="shipment-container mt-1">
                     {
                         filteredData.map(f => (
-                            <Shipment data={f} key={f._id} />
+                            <Shipment data={f} key={f._id} onShipmentClick={(id) => handleShipmentClick(id)} currentItem={currentItem} />
                         ))
                     }
                 </div>

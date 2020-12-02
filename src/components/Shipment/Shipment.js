@@ -4,10 +4,18 @@ import "./Shipment.css";
 const Shipment = (props) => {
   const {
     data: { _id, awbno, carrier, from, to, createdAt, current_status },
+    onShipmentClick,
+    currentItem,
   } = props;
 
   return (
-    <div className="d-flex table-body flex-space-between">
+    <div
+      className={[
+        "d-flex table-body flex-space-between",
+        currentItem._id === _id && "active-item",
+      ].join(" ")}
+      onClick={() => onShipmentClick(_id)}
+    >
       <div className="table-body-text">{awbno}</div>
       <div className="table-body-text">{carrier}</div>
       <div className="table-body-text">{from}</div>
@@ -18,7 +26,9 @@ const Shipment = (props) => {
       <div className="table-body-text">
         {props.data.hasOwnProperty("extra_fields") &&
         props.data.extra_fields.expected_delivery_date
-          ? new Date(props.data.extra_fields.expected_delivery_date).toLocaleDateString()
+          ? new Date(
+              props.data.extra_fields.expected_delivery_date
+            ).toLocaleDateString()
           : "-"}
       </div>
       <div className="table-body-text">{current_status}</div>

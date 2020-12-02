@@ -1,0 +1,53 @@
+.icon-timeline {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background: #d5deff;
+}
+
+.timeline-item-container {
+    padding: 1rem 0;
+}
+
+.icon-steps {
+    margin-bottom: 1rem;
+    padding: 1.5rem 0;
+    position: absolute;
+    left: -6px;
+}
+
+.steps-circle {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background: #3fb6dc;
+}
+
+.steps-line {
+    border-bottom: 2px solid #3fb6dc;
+    width: 20px;
+    margin: 0 2px;
+}
+
+.item-container {
+    border: 2px solid  #eef2ff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 35px;
+    width: 100%;
+}
+
+.item-subcontainer {
+    margin-left: 15px;
+    border-left: 2px dashed #2e5bff;
+    position: relative;
+}
+
+.steps-text {
+    font-size: 12px;
+    width: 23%;
+}
+
+.main-text {
+    width: 50%;
+}

@@ -1,0 +1,21 @@
+.table-heading-text {
+    text-transform: uppercase;
+    color: #bfc5d2;
+    font-size: 13px;
+    text-align: center;
+    width: 14%;
+}
+
+.timeline-container {
+    width: 30%;
+    padding: 0.5rem;
+    border: 2px solid #d5deff;
+}
+
+.shipments-container {
+    padding: 0.5rem;
+    border: 2px solid #d5deff;
+    height: 60vh;
+    overflow-y: scroll;
+    width: 65%;
+}

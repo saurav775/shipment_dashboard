@@ -1,0 +1,12 @@
+.table-body {
+    border: 1px solid #eef2ff;
+    margin-bottom: 1rem;
+    padding: 1.5rem 0;
+    cursor: pointer;
+}
+
+.table-body-text {
+    text-align: center;
+    width: 14%;
+    font-size: 13px;
+}

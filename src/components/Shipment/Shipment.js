@@ -3,7 +3,7 @@ import "./Shipment.css";
 
 const Shipment = (props) => {
   const {
-    data: { _id, awbno, carrier, from, to, createdAt, current_status },
+    data: { _id, awbno, carrier, from, to, createdAt, current_status, current_status_code },
     onShipmentClick,
     currentItem,
   } = props;
@@ -31,7 +31,7 @@ const Shipment = (props) => {
             ).toLocaleDateString()
           : "-"}
       </div>
-      <div className="table-body-text">{current_status}</div>
+      <div className={["table-body-text", current_status_code === 'DEL' && 'green-text'].join(' ')}>{current_status}</div>
     </div>
   );
 };

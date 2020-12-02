@@ -10,13 +10,13 @@ const Timeline = (props) => {
         <Flag width={21} height={28} />
       </div>
       <div className="item-subcontainer">
-        {item.map((i) => (
+        {item && item.map((i) => (
           <div className="d-flex" key={i.time}>
             <div className="d-flex flex-center icon-steps">
               <div className="steps-circle"></div>
               <div className="steps-line"></div>
             </div>
-            <div className="d-flex flex-space-between item-container">
+            <div className={["d-flex flex-space-between item-container", i.status_detail === 'DELIVERED' && 'delivered-item'].join(' ')}>
               <div className="steps-text main-text">{i.location.split(":")[0]}</div>
               <div className="steps-text">{i.time.split(" ")[0]}</div>
               <div className="steps-text">{i.time.split(" ")[1]}</div>

@@ -51,3 +51,8 @@
 .main-text {
     width: 50%;
 }
+
+.delivered-item {
+    background: #e6ebff;
+    color: #33ad68
+}

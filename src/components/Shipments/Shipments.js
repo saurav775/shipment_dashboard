@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Shipment from '../Shipment'
 import Timeline from '../Timeline'
 import './Shipments.css'
@@ -6,6 +6,11 @@ import './Shipments.css'
 const Shipments = (props) => {
     const { filteredData } = props
     const [currentItem, setCurrentItem] = useState(filteredData[0])
+
+    useEffect(() => {
+        setCurrentItem(filteredData[0])
+    }, [setCurrentItem, filteredData])
+
     const handleShipmentClick = (id) => {
         setCurrentItem(filteredData.filter(e => e._id === id)[0])
     }
